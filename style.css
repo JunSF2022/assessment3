@@ -1,0 +1,14 @@
+body {
+
+    background-color: gray;
+
+}
+
+.buttons {
+
+    text-align: center;
+    background-color: brown;
+    font-size: 40px;
+    align-items: center;
+
+}

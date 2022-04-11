@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+    
+    <body>  
+          
+        <h1>
+        
+        <audio src="./bensound-ukulele.mp3" id="song1"></audio>
+
+        <audio src="./bensound-betterdays.mp3" id="song2"></audio>
+
+        <audio src="./bensound-sunny.mp3" id="song3"></audio>
+
+    <div class="buttons">
+        
+        MUSIC FOR YOU!!!
+        <br><br>
+        UKULELE, BETTER DAYS, SUNNY
+        <br><br>
+        (press pause button before pressing next button)
+
+   
+ 
+        <br><br>
+        <button onclick="play()" type="button">Play</button>  
+        <br/>  
+        <button onclick="pause()" type="button">Pause</button>  
+        <br/>  
+        <button onclick="next()" type="button">Next track</button>  
+        <br><br>
+
+    
+        <input id="vol-control" type="range" min="1" max="100" step="1"
+            value="50" class="volume_slider" oninput="setVolume(this.value)" 
+            onchange="setVolume(this.value)"></input>
+ 
+        <br/><br><br>
+    
+    
+        </h1>
+
+    </div>      
+            
+        <script src="./play.js"></script>  
+
+    </body>
+
+</html> 
