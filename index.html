@@ -8,48 +8,74 @@
     <link rel="stylesheet" href="./style.css">
 </head>
     
-    <body>  
-          
-        <h1>
-        
-        <audio src="./bensound-ukulele.mp3" id="song1"></audio>
-
-        <audio src="./bensound-betterdays.mp3" id="song2"></audio>
-
-        <audio src="./bensound-sunny.mp3" id="song3"></audio>
-
-    <div class="buttons">
-        
+<body>  
+    <!-- Track list to play -->
+    <audio src="./bensound-ukulele.mp3" id="song1"></audio>
+    <audio src="./bensound-betterdays.mp3" id="song2"></audio>
+    <audio src="./bensound-sunny.mp3" id="song3"></audio>
+    
+    <h4>
+    <div class="banner">
+        <br><br>
         MUSIC FOR YOU!!!
         <br><br>
         UKULELE, BETTER DAYS, SUNNY
         <br><br>
-        (press pause button before pressing next button)
-
-   
- 
+        (press pause button before pressing next & prev button)
         <br><br>
-        <button onclick="play()" type="button">Play</button>  
-        <br/>  
-        <button onclick="pause()" type="button">Pause</button>  
-        <br/>  
-        <button onclick="next()" type="button">Next track</button>  
-        <br><br>
-
+    </h4>
+    </div> 
     
-        <input id="vol-control" type="range" min="1" max="100" step="1"
+    <div class="player">
+  
+        <!-- Define the section for displaying details -->
+        <div class="details">
+          <div class="now-playing"></div>
+          <div class="track-art"></div>
+          <div class="track-name"></div>
+          <div class="track-artist"></div>
+        </div>
+          
+        <!-- Define the section for displaying track buttons -->
+        <div class="buttons">
+          <div class="prev-track">
+            <button onclick="prev()" type="button">Prev track</button>
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+          <div class="play-track">
+            <button onclick="play()" type="button">Play</button>
+            <i class="fa fa-play-circle fa-5x"></i>
+          </div>
+          <div class="pause-track">
+            <button onclick="pause()" type="button">Pause</button>  
+            <i class="fa fa-pause-circle fa-5x"></i>
+          </div>
+          <div class="next-track">
+            <button onclick="next()" type="button">Next track</button>
+            <i class="fa fa-step-forward fa-2x"></i>
+          </div>
+        </div>
+      
+        <!-- Define the section for displaying the seek slider-->
+        <div class="slider_container">
+          <div class="current-time">00:00</div>
+          <input type="range" min="1" max="100"
+            value="0" class="seek_slider" onchange="seekTo()">
+          <div class="total-duration">00:00</div>
+        </div>
+      
+        <!-- Define the section for displaying the volume slider-->
+        <div class="slider_container">
+          <i class="fa fa-volume-down"></i>
+          <input id="vol-control" type="range" min="1" max="100" step="1"
             value="50" class="volume_slider" oninput="setVolume(this.value)" 
             onchange="setVolume(this.value)"></input>
- 
-        <br/><br><br>
+          <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
     
-    
-        </h1>
+    <script src="./play.js"></script>  
 
-    </div>      
-            
-        <script src="./play.js"></script>  
-
-    </body>
+</body>
 
 </html> 

@@ -17,6 +17,19 @@ function next() {
     play();
     }
 
+function prev() {
+    // Go back to the last track if the
+    // current one is the first in the track list
+    if (track_index > 0)
+      track_index -= 1;
+    else track_index = track_list.length - 1;
+          
+    // Load and play the new track
+    load(track_index);
+    play();
+    }
+    
+
 function play()
     {
         track_list[track_index].play();
